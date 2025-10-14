@@ -70,8 +70,9 @@ dmesg | head
 ---
 
 ## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+hasil percobaaan
+<img width="1920" height="1080" alt="Screenshot 2025-10-14 180258" src="https://github.com/user-attachments/assets/9d905f45-e1ca-46e9-99d2-af0b5869e1da" />
+
 
 ---
 
