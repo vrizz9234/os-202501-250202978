@@ -1,9 +1,9 @@
 
-
 # Laporan Praktikum Minggu [X]
 Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 
 ---
+
 ## Identitas
 - **Nama**  : [Nama Mahasiswa]  
 - **NIM**   : [NIM Mahasiswa]  
@@ -72,4 +72,9 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 ## Refleksi Diri
 Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya? 
+- Bagaimana cara Anda mengatasinya?  
+
+---
+
+**Credit:**  
+_Template laporan praktikum Sistem Operasi (SO-202501) – Universitas Putra Bangsa_
