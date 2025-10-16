@@ -12,8 +12,10 @@ Arsitektur Sistem Operasi dan Kernel
 ---
 
 ## Tujuan sistem operasi dan peran kernel serta system kernel   
-1.Menjembatani program dengan kernel OS,karena program tidak dapat mengakses sumber daya sistem secara langsung karena batasan keamanan
-2.
+1. Menjelaskan konsep dan fungsi system call dalam sistem operasi.
+2. Mengidentifikasi jenis-jenis system call dan fungsinya.
+3. Mengamati alur perpindahan mode user ke kernel saat system call terjadi.
+4. Menggunakan perintah Linux untuk menampilkan dan menganalisis system call.
 
 ## Dasar Teori
 Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
@@ -53,8 +55,14 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 ## Kode / Perintah
 Tuliskan potongan kode atau perintah utama:
 ```bash
+strace ls
+bash
+strace -e trace=open,read,write,close cat /etc/passwd
+bash
+strace -e trace=open,read,write,close cat /etc/passwd
+  
 
-## Hasil Eksekusi
+
 
 
 
