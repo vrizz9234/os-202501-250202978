@@ -65,7 +65,7 @@ strace -e trace=open,read,write,close cat /etc/passwd
 ## Hasil Eksekusi
 Screnshoot hasil percobaan dan diagram:
 
-![alt text](./screenshots/Screenshot 2025-10-16 170452.png)
+![alt text](./screenshots/syscall_ls.png)
 
 
 
