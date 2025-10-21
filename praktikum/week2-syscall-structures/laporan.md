@@ -61,7 +61,10 @@ strace -e trace=open,read,write,close cat /etc/passwd
 bash
 strace -e trace=open,read,write,close cat /etc/passwd
 ```
-  
+
+## Hasil Eksekusi
+Screnshoot hasil percobaan dan diagram:
+
 
 
 
@@ -72,7 +75,8 @@ strace -e trace=open,read,write,close cat /etc/passwd
 ## Analisis
 - Jelaskan makna hasil percobaan.  
 - Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?
+-   
 
 ---
 
