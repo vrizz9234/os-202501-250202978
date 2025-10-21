@@ -60,6 +60,7 @@ bash
 strace -e trace=open,read,write,close cat /etc/passwd
 bash
 strace -e trace=open,read,write,close cat /etc/passwd
+```
   
 
 
