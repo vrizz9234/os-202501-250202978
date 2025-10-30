@@ -134,36 +134,72 @@ Tuliskan potongan kode atau perintah utama:
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+
+![alt text](./Screenshot 2025-10-26 144149.png)
+
 
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+##1.Analisis File
+No.,Perintah,Deskripsi/Hasil Observasi,Penjelasan
+1.,pwd,Menampilkan jalur direktori kerja saat ini (contoh: /home/user/dokumen).,"Perintah ini kependekan dari ""Print Working Directory"" dan digunakan untuk mengetahui lokasi direktori (folder) tempat pengguna sedang berada di sistem berkas."
+2.,ls -l,Menampilkan daftar isi direktori saat ini dalam format panjang (detail).,"Perintah ls (list) menampilkan isi direktori. Opsi -l menambahkan detail seperti hak akses, jumlah link, pemilik, grup, ukuran berkas, dan tanggal modifikasi."
+3.,cd /tmp,Berpindah ke direktori /tmp.,Perintah cd (Change Directory) digunakan untuk navigasi. Direktori /tmp adalah lokasi sementara untuk berkas yang tidak perlu disimpan secara permanen.
+4.,ls -a,"Menampilkan seluruh isi direktori /tmp, termasuk berkas tersembunyi.","Perintah ls menampilkan isi direktori. Opsi -a (all) memastikan semua berkas, termasuk berkas yang diawali dengan titik (.) yang biasanya tersembunyi, ikut ditampilkan."
+##2.Membaca File Jalankan perintah:
+No.,Perintah,Deskripsi/Hasil Observasi (Contoh Output),Penjelasan
+1.,cat /etc/passwd | head -n 5,Contoh Output 5 Baris Pertama:root:x:0:0:root:/root:/bin/bashdaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologinbin:x:2:2:bin:/bin:/usr/sbin/nologinsys:x:3:3:sys:/dev:/usr/sbin/nologinsync:x:4:65534:sync:/bin:/bin/sync,Perintah ini menggabungkan dua perintah:1. cat /etc/passwd: Menampilkan seluruh isi file /etc/passwd.2. 
+No.,Nama Field,Keterangan,Contoh Nilai
+1.,User (Username),Nama unik akun pengguna. Digunakan saat login.,"root, gemini"
+2.,Password,"Placeholder Sandi. Karakter x menunjukkan bahwa sandi akun yang dienkripsi disimpan di file terpisah yang lebih aman, yaitu /etc/shadow.",x
+3.,UID (User ID),Nomor Identifikasi Pengguna unik. UID 0 selalu dicadangkan untuk pengguna root (administrator).,"0, 1000"
+4.,GID (Group ID),Nomor Identifikasi Kelompok utama (Primary Group) tempat pengguna tersebut berada.,"0, 1000"
+5.,GECOS,"Informasi deskriptif (Opsional). Biasanya berisi nama lengkap pengguna, nomor kantor, dan detail kontak lainnya.","root, Gemini User"
+6.,Home Directory,Jalur absolut ke direktori home pengguna. Tempat pengguna memulai sesi kerjanya setelah login.,"/root, /home/gemini"
+7.,Shell,"Jalur ke program shell yang akan dijalankan ketika pengguna login (misalnya, untuk antarmuka baris perintah). Jika nilainya adalah /usr/sbin/nologin atau sejenisnya, berarti akun tersebut tidak dapat digunakan untuk login interaktif.","/bin/bash, /usr/sbin/nologin"
+##3.Permission & Ownership Buat file baru:
+Untuk memasukkan kode dengan nama yang bisa di sesuaikan dengan nick dan nim tersendiri
+
 
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+1.Perintah dasar Linux seperti echo, ls, cd, dan cat digunakan untuk membuat, menampilkan, dan mengelola file serta direktori. Contohnya, echo "Hello <Faris>" > percobaan.txt berhasil membuat file teks baru.
+2.Kepemilikan file (ownership) dapat diubah dengan chown, yang menentukan siapa pemilik dan grup dari file tersebut. Setelah sudo chown root percobaan.txt, file berpindah kepemilikan ke root, sehingga hanya superuser yang bisa mengaksesnya.
+
 
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. 1. Apa fungsi dari perintah `chmod`? Fungsi utama dari perintah **chmod** (Change Mode) adalah untuk mengubah hak akses (permission) dari suatu file atau direktori pada sistem operasi berbasis Unix/Linux.
+Hak akses ini mengatur siapa saja yang dapat membaca (read), menulis (write), dan menjalankan (execute) file atau direktori tersebut.
+Hak akses dapat diubah menggunakan dua mode:
+1.Mode Simbolik (Symbolic Mode): Menggunakan huruf (u, g, o, a) dan simbol (+, -, =).
+2.Mode Numerik/Oktal (Octal Mode): Menggunakan angka tiga digit (0-7), di mana setiap digit mewakili hak akses untuk Pemilik (User), Grup (Group), dan Lainnya (Others).
+2.Apa arti dari kode permission `rwxr-xr--`? Kode permission **rwxr-xr--** terdiri dari tiga segmen utama, yang masing-masing mengatur hak akses untuk Pemilik (User), Grup (Group), dan Lainnya (Others).
+3.Jelaskan perbedaan antara `chown` dan `chmod`.?Meskipun keduanya digunakan untuk mengelola file dan direktori, chown dan chmod memiliki fungsi yang sangat berbeda:Fitur,chown (Change Owner),chmod (Change Mode)
+Fungsi Utama,Mengubah Pemilik (Owner) dan/atau Grup (Group) dari suatu file atau direktori.,Mengubah Hak Akses (Permissions) dari suatu file atau direktori.
+Apa yang Diubah,Metadata kepemilikan. Siapa yang memiliki file tersebut dan grup utama mana yang terkait dengannya.,"Aturan hak akses (read, write, execute)."
+Sintaks Contoh,chown namauser:namagrup namafile,chmod 755 namafile atau chmod +x namafile
+Tujuan,Menetapkan kontrol administratif atas file (siapa yang bertanggung jawab/memiliki hak tertinggi).,"Menetapkan apa yang dapat dilakukan pengguna (Pemilik, Grup, Lainnya) terhadap file."
+
+  ## E. Output yang Diharapkan
+- Hasil observasi perintah Linux dimasukkan ke dalam `laporan.md`.  
+- Screenshot hasil eksekusi disimpan di `screenshots/`.  
+- Laporan lengkap tersimpan di `laporan.md`.  
+- Semua hasil telah di-*commit* ke GitHub tepat waktu.  
+
+   
+ 
+   
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini?memahami konsep bab ini yang lumayann pusing untuk memahamik
+- Bagaimana cara Anda mengatasinya?dengan menyeduhkan kopi di situlah saya memahami dasar konsep tentang linux 
 
 ---
 
