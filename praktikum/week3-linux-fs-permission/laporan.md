@@ -144,8 +144,14 @@ Sertakan screenshot hasil percobaan atau diagram:
 ##1.Analisis File
 No.,Perintah,Deskripsi/Hasil Observasi,Penjelasan
 1.,pwd,Menampilkan jalur direktori kerja saat ini (contoh: /home/user/dokumen).,"Perintah ini kependekan dari ""Print Working Directory"" dan digunakan untuk mengetahui lokasi direktori (folder) tempat pengguna sedang berada di sistem berkas."
+
+
 2.,ls -l,Menampilkan daftar isi direktori saat ini dalam format panjang (detail).,"Perintah ls (list) menampilkan isi direktori. Opsi -l menambahkan detail seperti hak akses, jumlah link, pemilik, grup, ukuran berkas, dan tanggal modifikasi."
+
+
 3.,cd /tmp,Berpindah ke direktori /tmp.,Perintah cd (Change Directory) digunakan untuk navigasi. Direktori /tmp adalah lokasi sementara untuk berkas yang tidak perlu disimpan secara permanen.
+
+
 4.,ls -a,"Menampilkan seluruh isi direktori /tmp, termasuk berkas tersembunyi.","Perintah ls menampilkan isi direktori. Opsi -a (all) memastikan semua berkas, termasuk berkas yang diawali dengan titik (.) yang biasanya tersembunyi, ikut ditampilkan."
 ##2.Membaca File Jalankan perintah:
 No.,Perintah,Deskripsi/Hasil Observasi (Contoh Output),Penjelasan
@@ -172,12 +178,16 @@ Untuk memasukkan kode dengan nama yang bisa di sesuaikan dengan nick dan nim ter
 ---
 
 ## Quiz
-1. 1. Apa fungsi dari perintah `chmod`? Fungsi utama dari perintah **chmod** (Change Mode) adalah untuk mengubah hak akses (permission) dari suatu file atau direktori pada sistem operasi berbasis Unix/Linux.
+1.Apa fungsi dari perintah `chmod`? Fungsi utama dari perintah **chmod** (Change Mode) adalah untuk mengubah hak akses (permission) dari suatu file atau direktori pada sistem operasi berbasis Unix/Linux.
 Hak akses ini mengatur siapa saja yang dapat membaca (read), menulis (write), dan menjalankan (execute) file atau direktori tersebut.
 Hak akses dapat diubah menggunakan dua mode:
 1.Mode Simbolik (Symbolic Mode): Menggunakan huruf (u, g, o, a) dan simbol (+, -, =).
 2.Mode Numerik/Oktal (Octal Mode): Menggunakan angka tiga digit (0-7), di mana setiap digit mewakili hak akses untuk Pemilik (User), Grup (Group), dan Lainnya (Others).
+
+
 2.Apa arti dari kode permission `rwxr-xr--`? Kode permission **rwxr-xr--** terdiri dari tiga segmen utama, yang masing-masing mengatur hak akses untuk Pemilik (User), Grup (Group), dan Lainnya (Others).
+
+
 3.Jelaskan perbedaan antara `chown` dan `chmod`.?Meskipun keduanya digunakan untuk mengelola file dan direktori, chown dan chmod memiliki fungsi yang sangat berbeda:Fitur,chown (Change Owner),chmod (Change Mode)
 Fungsi Utama,Mengubah Pemilik (Owner) dan/atau Grup (Group) dari suatu file atau direktori.,Mengubah Hak Akses (Permissions) dari suatu file atau direktori.
 Apa yang Diubah,Metadata kepemilikan. Siapa yang memiliki file tersebut dan grup utama mana yang terkait dengannya.,"Aturan hak akses (read, write, execute)."
