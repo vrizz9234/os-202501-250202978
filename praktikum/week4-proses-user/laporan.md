@@ -5,9 +5,9 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 ---
 
 ## Identitas
-- **Nama**  :Faris Azhar  
-- **NIM**   :250202978  
-- **Kelas** :1 IKRA
+- **Nama**  : Faris Azhar  
+- **NIM**   : 250202978  
+- **Kelas** : 1 IKRA
 
 ---
 
