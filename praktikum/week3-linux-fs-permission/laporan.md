@@ -25,21 +25,17 @@ Linux adalah sebuah sistem operasi (OS) sumber terbuka (open-source) yang berbas
 Dalam praktiknya, Linux sering merujuk pada keseluruhan sistem operasi yang terdiri dari kernel Linux (inti dari OS yang mengelola perangkat keras) dan berbagai perangkat lunak pendukung, yang keseluruhannya dikenal sebagai distribusi Linux (atau "distro," seperti Ubuntu, Fedora, Debian, atau Mint).
 Tujuan Mengoperasikan Linux
 Tujuan utama seseorang atau organisasi memilih dan mengoperasikan Linux seringkali berkaitan dengan sifatnya yang sumber terbuka, gratis, dan sangat andal.
-
 Keuntungan Utama Linux
 Gratis dan Sumber Terbuka (Open Source) 
-
 Linux dapat diunduh dan digunakan tanpa biaya lisensi (tidak perlu membayar untuk menggunakannya).
-
 Kode sumbernya terbuka untuk publik, memungkinkan siapa saja untuk melihat, memodifikasi, dan mendistribusikannya. Tujuannya adalah mendorong transparansi, inovasi, dan kolaborasi global.
-
 Keamanan dan Stabilitas 
 
 Linux dikenal memiliki keamanan yang kuat karena sistem izin penggunanya yang ketat dan struktur yang secara inheren membuatnya lebih tahan terhadap virus dan malware dibandingkan sistem operasi komersial lainnya.
 
 Sistem ini sangat stabil dan dapat berjalan dalam jangka waktu lama (berbulan-bulan) tanpa perlu di-reboot. Hal ini menjadikannya pilihan utama untuk server web, database, dan sistem komputasi awan (cloud computing).
 
-Fleksibilitas dan Kustomisasi (Penyesuaian) �️
+Fleksibilitas dan Kustomisasi (Penyesuaian) ️
 
 Tersedia banyak distribusi Linux (distro) yang dapat dipilih sesuai kebutuhan spesifik, misalnya untuk desktop, server, komputasi berkinerja tinggi (superkomputer), pengembangan perangkat lunak, atau perangkat tersemat (embedded devices) seperti smart TV dan router.
 
@@ -135,7 +131,7 @@ Tuliskan potongan kode atau perintah utama:
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
 
-![alt text](./Screenshot 2025-10-26 144149.png)
+![alt text](screenshots/Screenshot 2025-10-26 144149.png)
 
 
 ---
