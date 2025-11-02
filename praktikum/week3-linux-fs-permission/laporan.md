@@ -131,7 +131,7 @@ Tuliskan potongan kode atau perintah utama:
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
 
-![alt text](screenshots/Screenshot 2025-10-26 144149.png)
+![alt text](<screenshots/Screenshot 2025-10-26 144149.png>)
 
 
 ---
