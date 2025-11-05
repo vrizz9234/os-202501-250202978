@@ -1,14 +1,13 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+# Laporan Praktikum Minggu 5
+Topik: Penjadwalan CPU – FCFS dan SJF
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
-
+- **Nama**  : Faris Azhar
+- **NIM**   : 250202978 
+- **Kelas** : 1 IKRA
 ---
 
 ## Tujuan
