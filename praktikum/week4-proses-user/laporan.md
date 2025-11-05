@@ -1,5 +1,5 @@
 
-# Laporan Praktikum Minggu [X]
+# Laporan Praktikum Minggu 4
 Topik: Manajemen Proses dan User di Linux 
 
 ---
@@ -142,13 +142,14 @@ sudo passwd praktikan
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![alt text](<screenshots/manajemenlinux.png>)
+![alt text](<screenshots/manajemen linux.png>)
 ![alt text](<screenshots/manajemenlinux2.png>)
 
 ---
 
 ## Analisis
-1.hasilkan hiearki proses dalam bentuk diagram pohon
+1.Hasil hierarki proses dalam bentuk diagram pohon (pstree) di laporan.
+```bash
 systemd(1)-+-agetty(190)
            |-agetty(198)
            |-cron(155)
@@ -170,6 +171,7 @@ systemd(1)-+-agetty(190)
            |-systemd(354)---(sd-pam)(356)
            |-systemd-journal(43)
 
+```
 2.Hubungan antara Manajemen User dan Keamanan Sistem Linux sangatlah fundamental dan bersifat langsung. Manajemen user adalah dasar dari keamanan Linux karena ia menentukan siapa yang dapat mengakses sistem dan apa yang dapat mereka lakukan.
 
 Ini adalah perwujudan dari Prinsip Hak Akses Paling Rendah (Principle of Least Privilege/PoLP), di mana setiap pengguna (user) dan proses hanya diberi hak akses minimal yang mereka butuhkan untuk menjalankan tugasnya.
@@ -208,12 +210,32 @@ Tuliskan 2–3 poin kesimpulan dari praktikum ini.
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. Apa fungsi dari proses init atau systemd dalam sistem Linux?  
+ Fungsi utama dari proses init (atau pengganti modernnya, systemd) dalam sistem Linux adalah sebagai manajer sistem dan layanan yang berjalan sebagai proses    pertama dengan PID 
+2. Apa perbedaan antara kill dan killall?
+   
+| Fitur | Perintah `kill` | Perintah `killall` |
+|:---|:---|:---|
+| Identifikasi target | Menggunakan PID (Process ID) | Menggunakan Nama Proses (executable)|
+| Spesifisitas | Sangat spesifik. Menargetkan satu proses unik dengan PID yang diberikan. | Kurang spesifik. Menargetkan semua instance dari proses dengan nama tersebut.|
+| Contoh | `kill 1144` (Menghentikan hanya proses dengan PID 1144) | `killall firefox` (Menghentikan semua jendela/proses Firefox yang sedang berjalan) |
+
+3. Mengapa user root memiliki hak istimewa di sistem Linux?
+   User root (juga dikenal sebagai Superuser atau Administrator) memiliki hak istimewa di sistem Linux karena root adalah akun yang bertanggung jawab atas administrasi dan integritas sistem secara keseluruhan.
+
+Alasan utama root diberikan hak istimewa tak terbatas adalah:
+
+1.Kontrol Absolut: root adalah satu-satunya akun yang dapat mengakses dan memodifikasi semua file, direktori, dan sumber daya sistem tanpa batasan hak akses (termasuk file-file penting di /etc, /bin, dan /usr).
+
+2.Tugas Administratif: Hak ini diperlukan untuk menjalankan fungsi kritis seperti:
+-Menginstal, menghapus, atau memperbarui perangkat lunak (paket).
+-Mengubah konfigurasi sistem (jaringan, firewall, kernel).
+-Mengelola akun user dan grup lain (membuat, menghapus, mengubah password).
+-Melakukan maintenance sistem level rendah.
+
+3.Mempertahankan Keamanan: Dengan membatasi pengguna biasa (non-root) dari memodifikasi file sistem yang vital, sistem terlindungi dari kerusakan yang tidak disengaja maupun serangan berbahaya. Hanya root yang memiliki "kunci master" untuk membuat perubahan skala sistem.
+
+Karena kekuasaan absolut ini, praktik terbaik keamanan Linux adalah menghindari login langsung sebagai root untuk tugas sehari-hari. Sebaliknya, user biasa menggunakan perintah sudo (Superuser Do) untuk menjalankan perintah yang memerlukan hak root hanya saat dibutuhkan. 
 
 ---
 
