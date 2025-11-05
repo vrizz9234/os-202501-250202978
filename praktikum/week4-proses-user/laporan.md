@@ -142,8 +142,8 @@ sudo passwd praktikan
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![alt text](<screenshots/code sleep.png>)
-![alt text](<screenshots/code sleep2.png>)
+![alt text](<screenshots/manajemenlinux.png>)
+![alt text](<screenshots/manajemenlinux2.png>)
 
 ---
 
