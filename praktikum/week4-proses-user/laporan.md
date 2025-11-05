@@ -142,16 +142,65 @@ sudo passwd praktikan
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
+![alt text](<screenshots/code sleep.png>)
+![alt text](<screenshots/code sleep2.png>)
 
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+1.hasilkan hiearki proses dalam bentuk diagram pohon
+systemd(1)-+-agetty(190)
+           |-agetty(198)
+           |-cron(155)
+           |-dbus-daemon(156)
+           |-init-systemd(Ub(2)-+-SessionLeader(305)---Relay(307)(306)---bash(307)-+-head(1150)
+           |                    |                                                  `-pstree(1149)
+           |                    |-init(7)---{init}(8)
+           |                    |-login(308)---bash(376)
+           |                    `-{init-systemd(Ub}(9)
+           |-packagekitd(974)-+-{packagekitd}(975)
+           |                  |-{packagekitd}(976)
+           |                  `-{packagekitd}(977)
+           |-polkitd(979)-+-{polkitd}(981)
+           |              |-{polkitd}(982)
+           |              `-{polkitd}(983)
+           |-rsyslogd(192)-+-{rsyslogd}(216)
+           |               |-{rsyslogd}(217)
+           |               `-{rsyslogd}(219)
+           |-systemd(354)---(sd-pam)(356)
+           |-systemd-journal(43)
 
+2.Hubungan antara Manajemen User dan Keamanan Sistem Linux sangatlah fundamental dan bersifat langsung. Manajemen user adalah dasar dari keamanan Linux karena ia menentukan siapa yang dapat mengakses sistem dan apa yang dapat mereka lakukan.
+
+Ini adalah perwujudan dari Prinsip Hak Akses Paling Rendah (Principle of Least Privilege/PoLP), di mana setiap pengguna (user) dan proses hanya diberi hak akses minimal yang mereka butuhkan untuk menjalankan tugasnya.
+
+Berikut adalah poin-poin utama yang menjelaskan hubungan tersebut:
+
+ 1. Kontrol Akses (Authentication & Authorization)
+Manajemen user menyediakan mekanisme kontrol dua langkah yang krusial untuk keamanan:
+
+Autentikasi: Dengan mewajibkan setiap user memiliki kata sandi (password) yang kuat dan unik, sistem memastikan bahwa hanya individu yang berwenang (yang mengetahui kredensial) yang dapat masuk (login). Ini mencegah akses tidak sah ke sistem.
+
+Otorisasi: Setelah user terautentikasi, sistem user dan grup menentukan hak (permission) apa yang dimilikinya. Misalnya, user biasa tidak diizinkan mengakses atau mengubah file konfigurasi sistem, yang hanya bisa dilakukan oleh Superuser (root).
+
+ 2. Manajemen Hak Akses File (Permissions)
+Setiap file dan direktori di Linux memiliki kepemilikan (ownership) oleh seorang user dan satu grup. Manajemen user memungkinkan Administrator untuk:
+
+Pembatasan: Menggunakan perintah seperti chmod dan chown, Administrator dapat mengatur hak baca (r), tulis (w), dan eksekusi (x) secara spesifik untuk Owner, Grup, dan Others.
+
+Pencegahan Perubahan Tidak Sah: Dengan pembatasan hak akses, user biasa tidak dapat memodifikasi atau menghapus file sistem yang penting (misalnya, file di direktori /etc), sehingga mencegah kerusakan sistem yang tidak disengaja maupun serangan berbahaya.
+
+ 3. Isolasi User Biasa dan Akun Root
+Pemisahan Tugas: Manajemen user secara ketat memisahkan akun root (yang memiliki hak akses penuh/tidak terbatas) dari akun user biasa.
+
+Pengurangan Risiko: Dalam praktik keamanan terbaik, user tidak disarankan untuk bekerja menggunakan akun root. Sebaliknya, mereka menggunakan akun user biasa dan hanya menggunakan perintah sudo (Superuser Do) untuk menjalankan perintah yang memerlukan hak administratif. Hal ini mengurangi risiko jika akun user biasa disusupi, karena penyerang hanya mendapatkan akses terbatas (bukan akses penuh sistem).
+
+ 4. Audit dan Akuntabilitas
+Pelacakan Aktivitas: Setiap tindakan yang dilakukan di sistem Linux (seperti login, modifikasi file, dan perintah sudo) dicatat dalam log sistem. Karena setiap aktivitas dikaitkan dengan User ID (UID) tertentu, manajemen user yang baik memungkinkan Administrator untuk melacak siapa yang melakukan apa, dan kapan.
+
+Akuntabilitas: Kemampuan untuk mengaudit aktivitas ini sangat penting untuk mendeteksi ancaman, menginvestigasi insiden keamanan, dan menegakkan akuntabilitas di antara pengguna sistem.
 ---
+
 
 ## Kesimpulan
 Tuliskan 2–3 poin kesimpulan dari praktikum ini.
