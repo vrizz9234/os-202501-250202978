@@ -118,6 +118,7 @@ Sertakan screenshot hasil percobaan atau diagram:
 |   P3   |       0      |      9     |
 |   P4   |       0      |      5     |
 
+#FCFS
 |     Proses    | Start | Completion | Turnaround |  Waiting  |
 | :-----------: | :---: | :--------: | :--------: | :-------: |
 |       P1      |   0   |      8     |      8     |     0     |
@@ -126,6 +127,7 @@ Sertakan screenshot hasil percobaan atau diagram:
 |       P4      |   21  |     26     |     26     |     21    |
 | **Rata-rata** |       |            |  **16.75** | **10.25** |
 
+#SJF (Non-preemptive)
 |     Proses    | Start | Completion | Turnaround |  Waiting |
 | :-----------: | :---: | :--------: | :--------: | :------: |
 |       P2      |   0   |      4     |      4     |     0    |
