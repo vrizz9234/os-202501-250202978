@@ -19,9 +19,40 @@ Topik: Penjadwalan CPU – FCFS dan SJF
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+1. First-Come, First-Served (FCFS)
+Algoritma FCFS adalah metode penjadwalan yang paling sederhana dan beroperasi berdasarkan prinsip First-In, First-Out (FIFO), mirip seperti antrian di kehidupan nyata.
 
----
+Dasar Teori: Proses yang tiba lebih dahulu di ready queue (antrian siap) akan dilayani atau dieksekusi terlebih dahulu oleh CPU.
+
+Implementasi: Menggunakan antrian FIFO. Ketika sebuah proses meminta CPU, proses itu ditambahkan ke ekor antrian. Ketika CPU bebas, proses yang berada di kepala antrian akan dihapus dan dieksekusi.
+
+Sifat: Non-preemptive, artinya setelah CPU dialokasikan ke suatu proses, proses tersebut akan tetap memakai CPU sampai selesai (sampai prosesnya berhenti atau meminta I/O), tidak dapat diinterupsi oleh proses lain.
+
+Kelebihan: Mudah diimplementasikan dan dipahami.
+
+Kekurangan: Dapat menyebabkan waktu tunggu (waiting time) rata-rata yang tinggi, terutama jika ada proses dengan durasi (burst time) sangat lama di awal antrian, yang menahan semua proses pendek setelahnya (dikenal sebagai convoy effect).
+
+2. Shortest Job First (SJF) 
+
+Algoritma SJF memilih proses yang memiliki perkiraan waktu eksekusi (burst time) CPU terkecil berikutnya untuk dilayani terlebih dahulu.
+
+Dasar Teori: Prioritas eksekusi diberikan kepada proses yang membutuhkan waktu CPU terpendek. Tujuannya adalah untuk meminimalkan waktu tunggu rata-rata.
+
+Optimalitas: Secara teori, SJF menghasilkan waktu tunggu rata-rata minimum untuk sejumlah proses tertentu.
+
+Implementasi: Proses yang ada di ready queue diurutkan berdasarkan burst time terkecil.
+
+Jenis Sifat: SJF dapat dibagi menjadi dua skema:
+
+Non-preemptive: Setelah CPU dialokasikan ke proses dengan burst time terpendek, proses tersebut akan berjalan sampai selesai, meskipun ada proses baru yang datang dengan burst time lebih pendek.
+
+Preemptive (Shortest Remaining Time First / SRTF): Proses yang sedang berjalan dapat diinterupsi (dikeluarkan dari CPU) jika ada proses baru yang tiba di ready queue dengan sisa waktu eksekusi yang lebih pendek daripada sisa waktu proses yang sedang berjalan.
+
+Kelebihan: Memberikan waiting time dan turnaround time rata-rata yang lebih kecil dibandingkan FCFS.
+
+Kekurangan: Sulit untuk diimplementasikan di dunia nyata karena membutuhkan prediksi yang akurat tentang berapa lama waktu eksekusi CPU (burst time) yang akan dibutuhkan oleh proses selanjutnya, yang mana sulit untuk diketahui secara pasti.
+
+
 
 ## Langkah Praktikum
 1. Langkah-langkah yang dilakukan.  
