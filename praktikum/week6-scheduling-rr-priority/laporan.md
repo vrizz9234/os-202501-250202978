@@ -92,8 +92,7 @@ Tuliskan potongan kode atau perintah utama:
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
-
+![alt text](<screenshots/Screenshot 2025-11-25 133846.png>)
 ---
 
 ## Analisis
