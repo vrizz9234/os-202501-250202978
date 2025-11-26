@@ -96,14 +96,48 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+- Jelaskan makna hasil percobaan.
+Dari data hasil perhitungan Anda:
+
+Round Robin (RR): Rata-rata Waiting Time (WT) = 8,5 ms.
+
+Priority Scheduling: Rata-rata Waiting Time (WT) = 5,25 ms.
+
+Maknanya:
+
+Efisiensi: Algoritma Priority Scheduling (Non-Preemptive) terbukti lebih efisien dalam kasus ini karena menghasilkan waktu tunggu rata-rata yang jauh lebih rendah. Proses penting (P2) selesai sangat cepat.
+
+Keadilan (Fairness): Meskipun Round Robin memiliki waktu tunggu lebih lama, algoritma ini lebih "adil". Tidak ada proses yang harus menunggu terlalu lama untuk mendapatkan jatah CPU pertama kali (responsif), sedangkan pada Priority, proses dengan prioritas rendah (P3) berpotensi mengalami starvation (menunggu sangat lama) jika ada arus proses prioritas tinggi yang masuk terus menerus.
+
+- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).
+
+Hubungan dengan Teori Sistem Operasi
+Fungsi Kernel: Hasil ini menunjukkan kerja Scheduler (bagian dari kernel) yang bertugas memutuskan proses mana dalam Ready Queue yang akan dieksekusi oleh CPU.
+
+Context Switch: Pada Round Robin, terjadi banyak context switch (pergantian antar proses) setiap kali time quantum habis. Secara teori, ini menambah overhead sistem karena CPU harus menyimpan state (register, program counter) ke dalam PCB (Process Control Block) berulang kali.
+
+System Call & Interrupt: Pada Round Robin, perpindahan proses dipicu oleh Timer Interrupt dari hardware. Pada Priority (Non-Preemptive), perpindahan hanya terjadi jika proses selesai atau melakukan System Call (misalnya meminta I/O), sehingga overhead sistem cenderung lebih kecil dibanding RR.
+
+- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)? 
+
+Implementasi di dunia nyata lebih kompleks daripada simulasi ini:
+
+Linux: Menggunakan Completely Fair Scheduler (CFS). Linux tidak menggunakan Priority murni atau RR murni, melainkan menggunakan pohon Red-Black untuk menyeimbangkan proses agar setiap proses mendapatkan jatah CPU yang proporsional ("fair") namun tetap efisien. Ini sangat cocok untuk lingkungan server dan multi-tasking berat.
+
+Windows: Menggunakan Multilevel Feedback Queue dengan priority boosting. Windows lebih memprioritaskan "responsivitas GUI". Proses yang sedang aktif di jendela depan (foreground) sering diberi boost prioritas agar pengguna tidak merasa komputer lag, meskipun secara matematis mungkin kurang efisien dibanding Linux dalam hal throughput total.
+
 
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+
+Berdasarkan praktikum CPU Scheduling ini, dapat disimpulkan bahwa:
+
+1.Priority Scheduling menang dalam kecepatan rata-rata (WT 5,25 ms) untuk kumpulan data ini, menjadikannya pilihan tepat jika sistem ingin memprioritaskan pekerjaan penting agar cepat selesai.
+
+2.Round Robin (WT 8,5 ms) lebih unggul dalam interaktivitas, menjamin semua proses mendapat respons cepat tanpa peduli prioritasnya, namun memiliki overhead komputasi lebih tinggi akibat context switching.
+
+3.Trade-off: Tidak ada algoritma yang sempurna. Pemilihan algoritma tergantung tujuan OS: apakah mengejar fairness (seperti server/Linux) atau responsiveness (seperti desktop/Windows).
 
 ---
 
@@ -149,8 +183,8 @@ Solusi untuk Starvation: Mekanisme Aging (penuaan) sering digunakan untuk mengat
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini? sangatt pusingg sekali 
+- Bagaimana cara Anda mengatasinya?yaitu bikin kopi dan internet lancar  
 
 ---
 
