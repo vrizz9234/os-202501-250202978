@@ -1,5 +1,5 @@
 
-# Laporan Praktikum Minggu [X]
+# Laporan Praktikum Minggu 6
 Topik: Sinkronisasi Proses dan Masalah Deadlock
 
 
