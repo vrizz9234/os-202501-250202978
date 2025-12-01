@@ -5,7 +5,7 @@ Topik:  Sinkronisasi Proses dan Masalah Deadlock
 ---
 
 ## Identitas
-- **Nama**  : Faris Azhar
+- **Nama**  : Faris Azhar (Ketua),Analisis,Implementasi
 - **NIM**   : 250202978 
 - **Kelas** : 1 IKRA
 
@@ -23,7 +23,8 @@ Setelah menyelesaikan tugas ini, mahasiswa mampu:
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+Di sini saya mempelajaari tentang materi Sinkronisasi Proses dan Masalah Deadlock di saat itu juga saya berlaku mencari akar masalah tersebut dengan mempraktekkan di apk bernama Visual Studio Code berbasis Python   
+
 
 ---
 
@@ -86,12 +87,63 @@ dmesg | head
 
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
-![alt text](<screenshots/.png>)
 
+Eksperimen 1 – Simulasi Dining Philosophers (Deadlock Version)
 
+![alt text](<screenshots/semaphore so.png>)
+![alt text](<screenshots/semaphore so2.png>)
 
+Output dan Analisis
+![alt text](<screenshots/terminal so.png>)
 
+Saya menggunakan solusi Mengatur Urutan Pengambilan Garpu (Asymmetric Solution), yang merupakan solusi paling sederhana untuk memecahkan kondisi Circular Wait.
 
+Modifikasi Pseudocode (Asymmetric Solution)Kita membalik urutan pengambilan garpu hanya untuk satu filsuf (misalnya, filsuf terakhir, $i = N-1$):
+
+WHILE TRUE:
+    // ... (Thinking & Hungry states remain the same) ...
+
+    IF i == (N - 1): // The last philosopher (e.g., Philosopher 4)
+        // 1. Acquire RIGHT Fork first
+        ACQUIRE Forks[(i + 1) MOD N] 
+        // 2. Acquire LEFT Fork second
+        ACQUIRE Forks[i]
+    ELSE:
+        // Standard: Acquire LEFT Fork first, then RIGHT
+        ACQUIRE Forks[i] 
+        ACQUIRE Forks[(i + 1) MOD N] 
+
+    // ... (Eating & Release states remain the same) ...
+END WHILE
+
+Identifikasi Deadlock
+Kapan Terjadi Deadlock? Deadlock terjadi ketika semua 5 filsuf berhasil melewati langkah 3 (ACQUIRE Forks[i]) hampir secara bersamaan.
+
+Mengapa Terjadi Deadlock? Setiap filsuf sekarang memegang satu garpu (garpu kiri mereka) dan mencoba mendapatkan garpu kedua (garpu kanan) yang sedang dipegang oleh tetangga di sebelah kanannya. Ini menciptakan Ketergantungan Melingkar (Circular Wait). Tidak ada filsuf yang mau melepaskan garpu yang sudah dipegang (Hold and Wait), sehingga tidak ada yang bisa makan.
+
+Analisis Hasil Modifikasi
+Buktinya Deadlock Dihindari:
+
+1.Jika semua filsuf (0, 1, 2, 3) berhasil mengambil garpu kiri mereka, Philosopher 4 akan memegang garpu kanan (Fork 0) terlebih dahulu.
+
+2.Ketika Philosopher 4 mencoba mengambil garpu kiri (Fork 4), dia mungkin harus menunggu Philosopher 3 melepaskannya.
+
+3.Namun, karena Philosopher 4 memegang Fork 0, Philosopher 0 tidak akan bisa menyelesaikan langkah pengambilannya (karena butuh Fork 1 yang dipegang oleh P1, dan Fork 0 yang sekarang dipegang oleh P4).
+
+4.Pada akhirnya, Philosopher 4 akan mendapatkan garpu 4 dan mulai makan. Setelah Philosopher 4 selesai, dia akan melepaskan Fork 0 dan Fork 4.
+
+5.Pelepasan Fork 0 akan memecahkan ketergantungan dan memungkinkan Philosopher 0 (atau P3) untuk melanjutkan, dan seterusnya.
+
+Solusi Asimetris ini memecahkan kondisi Ketergantungan Melingkar karena tidak semua filsuf mengikuti pola melingkar yang sama dalam pengambilan sumber daya.
+
+Analisis Deadlock
+
+| Kondisi Deadlock  | Terjadi di Versi Deadlock (Naïve) | Solusi di Versi Fixed (Asymmetric) |
+|-------------------|-----------------------------------|-------------------------------------|
+| **1. Mutual Exclusion** | Ya. Semaphore `Semaphore(1)` memastikan satu garpu hanya bisa dipegang satu filsuf. | Tetap ada. Kondisi ini memang wajib; solusi tidak menghilangkannya, hanya bekerja mengatasinya. |
+| **2. Hold and Wait** | Ya. Filsuf memegang garpu kiri sambil menunggu garpu kanan. | Diatasi. Meskipun masih memegang satu garpu, risiko deadlock menurun karena ada filsuf yang mengambil garpu dengan urutan berbeda sehingga memberi peluang progress. |
+| **3. No Preemption** | Ya. Garpu tidak dapat direbut paksa; hanya dilepas sukarela. | Tetap ada. Karena garpu adalah sumber daya fisik, tidak bisa dipaksa lepas. Solusi bekerja di sekitar kondisi ini. |
+| **4. Circular Wait** | Ya. Semua filsuf mengambil garpu dengan urutan yang sama (Kiri → Kanan), membentuk siklus tunggu. | Dipecahkan. Satu filsuf (misal P4) mengambil garpu dengan urutan terbalik (Kanan → Kiri), memutus rantai tunggu melingkar. |
 
 
 
@@ -104,14 +156,59 @@ Sertakan screenshot hasil percobaan atau diagram:
 
 ## Analisis
 1. Analisis versi *Dining Philosophers* yang menyebabkan deadlock dan versi fixed yang bebas deadlock.  
+
+Analisis Perbandingan Versi Deadlock vs. Fixed
+Versi Deadlock (Naïve) gagal karena menciptakan kondisi Ketergantungan Melingkar (Circular Wait). Versi Fixed (Asimetris) memecahkan kondisi ini dengan mengubah urutan pengambilan sumber daya untuk satu proses.
+
+| Kondisi Deadlock   | Terjadi di Versi Deadlock (Naïve) | Solusi di Versi Fixed (Asymmetric) |
+|--------------------|------------------------------------|-------------------------------------|
+| **Mutual Exclusion** | Ya. Setiap garpu adalah sumber daya eksklusif (Semaphore = 1). | Tetap Ada. (Diperlukan agar garpu tidak digunakan bersamaan). |
+| **Hold and Wait** | Ya. Filsuf memegang garpu kiri sambil menunggu garpu kanan. | Diatasi. Risiko diminimalisasi karena simetri dipecahkan, memastikan kemajuan minimal satu proses. |
+| **No Preemption** | Ya. Garpu tidak dapat direbut paksa. | Tetap Ada. (Dipertahankan, karena garpu tidak bisa direbut). |
+| **Circular Wait** | Ya. Semua P mengambil Kiri → Kanan, menciptakan rantai tunggu P0 → P1 → ... → P0. | Dipecahkan. Satu filsuf (P4) mengambil Kanan → Kiri, mematahkan rantai tunggu dan menjamin minimal satu garpu akan dilepaskan. |
+
 2. Dokumentasikan hasil diskusi kelompok ke dalam `laporan.md`.  
-3. Sertakan diagram atau screenshot hasil simulasi/pseudocode.  
-4. Laporkan temuan penyebab deadlock dan solusi pencegahannya.  
+
+3. Sertakan diagram atau screenshot hasil simulasi/pseudocode.   
+
+- Diagram dan Pseudocode Alur KritisBerikut adalah diagram alur (visualisasi) dan perbandingan pseudocode yang menunjukkan perbedaan pada bagian paling kritis dari algoritma: pengambilan garpu.
+
+A. Visualisasi MasalahDiagram berikut menunjukkan pengaturan meja dan garpu, di mana setiap Filsuf ($P$) membutuhkan dua garpu ($F$) dari total $N$ sumber daya untuk dapat makan.
+
+B. Pseudocode Alur Kritis1.
+
+1.Versi Deadlock (Naïve)Semua filsuf mengikuti aturan yang sama. Deadlock terjadi di baris kedua ACQUIRE.
+
+| Langkah | Kode / Penjelasan |
+|--------|--------------------|
+| **Status Awal** | `STATUS = "Hungry"` |
+| **1. Ambil Garpu Kiri** | `ACQUIRE Forks[i]` |
+| **2. Ambil Garpu Kanan** | `ACQUIRE Forks[(i + 1) MOD N]` <br>⚠️ *Akan ter-block jika semua filsuf sudah memegang garpu kiri* |
+| **Status Setelah Sukses** | `STATUS = "Eating"` |
+| **Release** | `// ... Release ...` |
+
+2. Versi Fixed (Deadlock-Free - Asymmetric)
+
+Dengan membalik urutan pengambilan garpu untuk filsuf terakhir (misalnya P4, di mana $i = N-1$), kita memecahkan kondisi Circular Wait.
+
+| Langkah | Kode / Penjelasan |
+|--------|--------------------|
+| **Status Awal** | `STATUS = "Hungry"` |
+| **Cek Filsuf Terakhir** | `IF i == (N - 1)` |
+| **Jika Filsuf Terakhir** | Ambil garpu **kanan dulu**:<br>`ACQUIRE Forks[(i + 1) MOD N]`<br>lalu garpu **kiri**:<br>`ACQUIRE Forks[i]` |
+| **Jika Bukan Filsuf Terakhir** | Ambil garpu **kiri dulu**:<br>`ACQUIRE Forks[i]`<br>lalu garpu **kanan**:<br>`ACQUIRE Forks[(i + 1) MOD N]` |
+| **Status Setelah Sukses** | `STATUS = "Eating"` |
+| **Release** | `// ... Release ...` |
+
+5. Laporkan temuan penyebab deadlock dan solusi pencegahannya.  
 
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+
+1.Penyebab Deadlock adalah Simetri Perilaku:Deadlock terjadi karena semua proses (thread) mencoba mengambil sumber daya (garpu) dalam urutan yang sama (Kiri $\rightarrow$ Kanan). Hal ini menciptakan Ketergantungan Melingkar (Circular Wait) yang melibatkan semua filsuf, memenuhi semua syarat Deadlock secara simultan.
+
+2.Solusi Inti adalah Memecahkan Ketergantungan Melingkar:Deadlock dihindari bukan dengan menghindari Hold and Wait atau Mutual Exclusion, melainkan dengan mematahkan kondisi Circular Wait. Ini dicapai dengan memperkenalkan asimetri dalam aturan pengambilan sumber daya (misalnya, membuat satu filsuf mengambil garpu dalam urutan terbalik: Kanan $\rightarrow$ Kiri), sehingga menjamin bahwa rantai tunggu melingkar tidak akan terbentuk dan program dapat berlanjut.
 
 ---
 
@@ -158,8 +255,9 @@ Analogi: Bayangkan dua orang mencoba menarik uang dari rekening bank yang sama p
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini? di saat kode saya masukkan tersebut adaa erorr yang tidak dapat menjalankan di terminal  
+- Bagaimana cara Anda mengatasinya?memperbaiki kode yang menjadi akar masalah tersebut dan memperbaiki kode tersebut meskipun saya mengerjakan agak kewalahan dengan kode tersebut
+
 
 ---
 
