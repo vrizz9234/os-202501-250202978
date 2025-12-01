@@ -183,7 +183,7 @@ B. Pseudocode Alur Kritis1.
 |--------|--------------------|
 | **Status Awal** | `STATUS = "Hungry"` |
 | **1. Ambil Garpu Kiri** | `ACQUIRE Forks[i]` |
-| **2. Ambil Garpu Kanan** | `ACQUIRE Forks[(i + 1) MOD N]` <br>⚠️ *Akan ter-block jika semua filsuf sudah memegang garpu kiri* |
+| **2. Ambil Garpu Kanan** | `ACQUIRE Forks[(i + 1) MOD N]` <br> *Akan ter-block jika semua filsuf sudah memegang garpu kiri* |
 | **Status Setelah Sukses** | `STATUS = "Eating"` |
 | **Release** | `// ... Release ...` |
 
