@@ -13,8 +13,12 @@ Topik:  Sinkronisasi Proses dan Masalah Deadlock
 
 ## Tujuan
 Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+Setelah menyelesaikan tugas ini, mahasiswa mampu:
+1. Mengidentifikasi empat kondisi penyebab deadlock (*mutual exclusion, hold and wait, no preemption, circular wait*).  
+2. Menjelaskan mekanisme sinkronisasi menggunakan *semaphore* atau *monitor*.  
+3. Menganalisis dan memberikan solusi untuk kasus deadlock.  
+4. Berkolaborasi dalam tim untuk menyusun laporan analisis.  
+5. Menyajikan hasil studi kasus secara sistematis.  
 
 ---
 
@@ -24,10 +28,49 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 ---
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
+1. **Persiapan Tim**
+   - Bentuk kelompok beranggotakan 3–4 orang.  
+   - Tentukan ketua dan pembagian tugas (analisis, implementasi, dokumentasi).
+
+2. **Eksperimen 1 – Simulasi Dining Philosophers (Deadlock Version)**
+   - Implementasikan versi sederhana dari masalah *Dining Philosophers* tanpa mekanisme pencegahan deadlock.  
+   - Contoh pseudocode:
+     ```text
+     while true:
+       think()
+       pick_left_fork()
+       pick_right_fork()
+       eat()
+       put_left_fork()
+       put_right_fork()
+     ```
+   - Jalankan simulasi atau analisis alur (boleh menggunakan pseudocode atau diagram alur).  
+   - Identifikasi kapan dan mengapa deadlock terjadi.
+
+3. **Eksperimen 2 – Versi Fixed (Menggunakan Semaphore / Monitor)**
+   - Modifikasi pseudocode agar deadlock tidak terjadi, misalnya:
+     - Menggunakan *semaphore (mutex)* untuk mengontrol akses.
+     - Membatasi jumlah filosof yang dapat makan bersamaan (max 4).  
+     - Mengatur urutan pengambilan garpu (misal, filosof terakhir mengambil secara terbalik).  
+   - Analisis hasil modifikasi dan buktikan bahwa deadlock telah dihindari.
+
+4. **Eksperimen 3 – Analisis Deadlock**
+   - Jelaskan empat kondisi deadlock dari versi pertama dan bagaimana kondisi tersebut dipecahkan pada versi fixed.  
+   - Sajikan hasil analisis dalam tabel seperti contoh berikut:
+
+     | Kondisi Deadlock | Terjadi di Versi Deadlock | Solusi di Versi Fixed |
+     |------------------|---------------------------|------------------------|
+     | Mutual Exclusion | Ya (satu garpu hanya satu proses) | Gunakan semaphore untuk kontrol akses |
+     | Hold and Wait | Ya | Hindari proses menahan lebih dari satu sumber daya |
+     | No Preemption | Ya | Tidak ada mekanisme pelepasan paksa |
+     | Circular Wait | Ya | Ubah urutan pengambilan sumber daya |
+
+5. **Eksperimen 4 – Dokumentasi**
+   - Simpan semua diagram, screenshot simulasi, dan hasil diskusi di:
+     ```
+     praktikum/week7-concurrency-deadlock/screenshots/
+     ```
+   - Tuliskan laporan kelompok di `laporan.md` (format IMRaD singkat: *Pendahuluan, Metode, Hasil, Analisis, Diskusi*).
 
 ---
 
@@ -48,9 +91,10 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+1. Analisis versi *Dining Philosophers* yang menyebabkan deadlock dan versi fixed yang bebas deadlock.  
+2. Dokumentasikan hasil diskusi kelompok ke dalam `laporan.md`.  
+3. Sertakan diagram atau screenshot hasil simulasi/pseudocode.  
+4. Laporkan temuan penyebab deadlock dan solusi pencegahannya.  
 
 ---
 
