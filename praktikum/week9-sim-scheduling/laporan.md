@@ -11,10 +11,24 @@ Topik: Simulasi Algoritma Penjadwalan CPU
 
 ---
 
+## A. Deskripsi Singkat
+Pada praktikum minggu ini, mahasiswa akan **mengimplementasikan program simulasi sederhana algoritma penjadwalan CPU**, khususnya **FCFS dan SJF**.  
+Berbeda dengan Minggu 5–6 yang berfokus pada perhitungan manual, pada minggu ini mahasiswa mulai **mengotomatisasi perhitungan menggunakan program**, menjalankan dataset uji, serta menyajikan hasil dalam bentuk tabel atau grafik.
+
+Praktikum ini menjadi jembatan antara **pemahaman konseptual** dan **implementasi komputasional** algoritma sistem operasi.
+
+
+
+
+
+
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+Setelah menyelesaikan tugas ini, mahasiswa mampu:
+1. Membuat program simulasi algoritma penjadwalan FCFS dan/atau SJF.  
+2. Menjalankan program dengan dataset uji yang diberikan atau dibuat sendiri.  
+3. Menyajikan output simulasi dalam bentuk tabel atau grafik.  
+4. Menjelaskan hasil simulasi secara tertulis.  
+5. Mengunggah kode dan laporan ke Git repository dengan rapi dan tepat waktu.
 
 ---
 
@@ -33,7 +47,50 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 
 ## Kode / Perintah
 Tuliskan potongan kode atau perintah utama:
-```bash
+
+- Bahasa pemrograman **bebas** (Python / C / Java / lainnya).  
+- Tidak wajib GUI, cukup **program berbasis terminal**.  
+- Fokus penilaian pada **logika algoritma dan keakuratan hasil**, bukan kompleksitas bahasa.
+
+Struktur folder (sesuaikan dengan template repo):
+```
+praktikum/week9-sim-scheduling/
+├─ code/
+│  ├─ scheduling_simulation.*
+│  └─ dataset.csv
+├─ screenshots/
+│  └─ hasil_simulasi.png
+└─ laporan.md
+```
+
+---
+
+## D. Langkah Pengerjaan
+1. **Menyiapkan Dataset**
+
+   Buat dataset proses minimal berisi:
+
+   | Proses | Arrival Time | Burst Time |
+   |:--:|:--:|:--:|
+   | P1 | 0 | 6 |
+   | P2 | 1 | 8 |
+   | P3 | 2 | 7 |
+   | P4 | 3 | 3 |
+
+2. **Implementasi Algoritma**
+
+   Program harus:
+   - Menghitung *waiting time* dan *turnaround time*.  
+   - Mendukung minimal **1 algoritma (FCFS atau SJF non-preemptive)**.  
+   - Menampilkan hasil dalam tabel.
+
+3. **Eksekusi & Validasi**
+
+   - Jalankan program menggunakan dataset uji.  
+   - Pastikan hasil sesuai dengan perhitungan manual minggu sebelumnya.  
+   - Simpan hasil eksekusi (screenshot).
+
+
 uname -a
 lsmod | head
 dmesg | head
