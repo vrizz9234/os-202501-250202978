@@ -91,10 +91,19 @@ praktikum/week9-sim-scheduling/
    - Simpan hasil eksekusi (screenshot).
 
 
-uname -a
-lsmod | head
-dmesg | head
-```
+
+## E. Tugas & Quiz
+### Tugas
+1. Buat program simulasi FCFS atau SJF.  
+2. Jalankan program dengan dataset uji.  
+3. Sajikan output dalam tabel atau grafik.  
+4. Tulis laporan praktikum pada `laporan.md`.
+
+### Quiz
+Jawab pada bagian **Quiz** di laporan:
+1. Mengapa simulasi diperlukan untuk menguji algoritma scheduling?
+2. Apa perbedaan hasil simulasi dengan perhitungan manual jika dataset besar?  
+3. Algoritma mana yang lebih mudah diimplementasikan? Jelaskan.
 
 
 
