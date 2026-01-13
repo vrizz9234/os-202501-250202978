@@ -7,15 +7,15 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 ## Identitas
 - **Nama**  :
 
-1.Faris Azhar
+- 1.Faris Azhar
 
-2.Muhammad Reza Pahlevi
+- 2.Muhammad Reza Pahlevi
 
-3.Ammarudin Ibnu Salam
+- 3.Ammarudin Ibnu Salam
 
-4.Tri Agustin Wahyuningtyas  
+- 4.Tri Agustin Wahyuningtyas  
 
-5.Keysya Ayu Anggita
+- 5.Keysya Ayu Anggita
 - **NIM**   :
 - 250202978
 
