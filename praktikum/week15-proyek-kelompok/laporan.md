@@ -5,9 +5,19 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  :
+1.Faris Azhar
+2.Muhammad Reza Pahlevi
+3.Ammarudin Ibnu Salam
+4.Tri Agustin Wahyuningtyas  
+5.Keysya Ayu Anggita
+- **NIM**   :
+- 250202978
+- 250202995
+- 250202929
+- 250202970
+- 250202944 
+- **Kelas** : 1 IKRA 
 
 ---
 
