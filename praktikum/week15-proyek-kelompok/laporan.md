@@ -7,25 +7,11 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 ## Identitas
 - **Nama**  :
 
-- 1.Faris Azhar
-
-- 2.Muhammad Reza Pahlevi
-
-- 3.Ammarudin Ibnu Salam
-
-- 4.Tri Agustin Wahyuningtyas  
-
-- 5.Keysya Ayu Anggita
-- **NIM**   :
-- 250202978
-
-- 250202995
-
-- 250202929
-
-- 250202970
-
-- 250202944 
+1. Faris Azhar(250202978)
+2. Muhammad Reza Pahlevi(250202995)
+3. Ammarudin Ibnu Salam(250202929)
+4. Tri Agustin Wahyuningtyas(250202970)
+5. Keysya Ayu Anggita (250202944)
 
 - **Kelas** : 1 IKRA 
 
