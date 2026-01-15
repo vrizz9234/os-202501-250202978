@@ -90,6 +90,19 @@ praktikum/week9-sim-scheduling/
    - Pastikan hasil sesuai dengan perhitungan manual minggu sebelumnya.  
    - Simpan hasil eksekusi (screenshot).
 
+## Kode Perintah
+
+Data set
+
+ | Proses | Arrival Time | Burst Time |
+   |:--:|:--:|:--:|
+   | P1 | 0 | 6 |
+   | P2 | 1 | 8 |
+   | P3 | 2 | 7 |
+   | P4 | 3 | 3 |
+
+   
+
 
 
 ## E. Tugas & Quiz
