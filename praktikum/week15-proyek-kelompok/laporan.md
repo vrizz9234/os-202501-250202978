@@ -1,6 +1,7 @@
 
-# Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+# Laporan Praktikum Minggu 15
+Topik: Proyek Kelompok – Mini Simulasi Sistem Operasi (Scheduling + Memory + Container)
+
 
 ---
 
@@ -17,12 +18,43 @@ Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
 
 ---
 
-## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
+## 1. Pendahuluan
 
+## A. Latar Belakang
+
+Sistem operasi merupakan komponen perangkat lunak fundamental yang berfungsi sebagai jembatan antara pengguna, aplikasi, dan perangkat keras komputer. Dalam perkembangan teknologi informasi yang sangat pesat, efisiensi pengelolaan sumber daya daya komputasi menjadi tantangan utama. Dua pilar utama dalam efisiensi ini adalah manajemen waktu melalui Penjadwalan CPU (CPU Scheduling) dan manajemen ruang melalui Manajemen Memori (Memory Management).
+
+Penjadwalan CPU yang tepat memastikan bahwa setiap proses mendapatkan jatah waktu eksekusi yang adil dan responsif, sementara manajemen memori memastikan bahwa pemakaian RAM dilakukan secara optimal tanpa menyebabkan sistem menjadi lambat atau crash. Tanpa mekanisme ini, multitasking yang lancar pada komputer modern tidak mungkin tercapai.
+
+Lebih jauh lagi, tren teknologi saat ini telah bergeser ke arah efisiensi tingkat tinggi melalui Teknologi Kontainer (Containerization). Berbeda dengan virtualisasi tradisional yang berat, kontainer memungkinkan isolasi sumber daya bagi aplikasi dengan menggunakan kernel sistem operasi yang sama secara bersama-sama. Hal ini menciptakan kebutuhan bagi para praktisi IT untuk memahami bagaimana batasan sumber daya (resource limit) diterapkan pada suatu proses di dalam lingkungan yang terisolasi.
+
+Namun, mempelajari cara kerja internal sistem operasi secara langsung pada kernel aslinya seringkali sulit dilakukan karena kompleksitas kode dan risiko kegagalan sistem yang nyata. Oleh karena itu, pembuatan Mini Simulasi Sistem Operasi menjadi sangat relevan. Simulasi ini dirancang untuk memodelkan interaksi antara algoritma penjadwalan, alokasi memori, dan isolasi kontainer dalam lingkungan yang terkendali.
+
+Melalui proyek ini, kelompok kami berupaya untuk mengintegrasikan ketiga konsep tersebut ke dalam satu aplikasi simulasi tunggal. Proyek ini tidak hanya bertujuan untuk memenuhi tugas akademis, tetapi juga untuk memberikan gambaran konkret mengenai bagaimana sebuah sistem operasi modern mengatur antrean proses, mengalokasikan RAM, dan menerapkan batasan sumber daya pada setiap unit kontainer.
+
+
+## Tujuan
+B. Tujuan
+Setelah menyelesaikan proyek ini, mahasiswa mampu:
+1. Bekerja kolaboratif dalam tim dengan pembagian peran yang jelas.
+2. Mengintegrasikan beberapa konsep sistem operasi dalam satu aplikasi sederhana.
+3. Mengelola proyek menggunakan Git (branch/PR/commit yang rapi).
+4. Menyusun dokumentasi dan laporan proyek yang sistematis.
+5. Melakukan presentasi dan demo hasil proyek.
 ---
+
+## 2. Arsitektur Aplikasi
+
+Modul dan Pengaplikasiannya
+
+
+
+
+
+
+
+
+
 
 ## Dasar Teori
 Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
