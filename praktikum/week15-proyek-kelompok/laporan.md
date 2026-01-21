@@ -80,9 +80,13 @@ dmesg | head
 ---
 
 ## Hasil Eksekusi
-Sertakan screenshot hasil percobaan atau diagram:
-![Screenshot hasil](screenshots/example.png)
 
+Sertakan screenshot hasil percobaan atau diagram:
+
+![alt text](screenshots/dockerbuild.png)
+![alt text](screenshots/cpuscheduling.png)
+![alt text](screenshots/pagereplacemen.png)
+![alt text](screenshots/keluar.png)
 ---
 
 ## Analisis
