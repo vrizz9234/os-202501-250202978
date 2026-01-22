@@ -16,8 +16,8 @@ def menu_SJF():
 
     print("NAMA FILE                      | Arrival Time (AT) | Burst Time (BT) |")
     print("------------------------------ | ----------------: | --------------: |")
-    print("hasil-percobaan.jpg            |                 1 |               2 |")
-    print("Persentasi-week15.mp4          |                 0 |               8 |")
+    print("hasil-percobaan.jpg            |                 0 |               2 |")
+    print("Persentasi-week15.mp4          |                 1 |               8 |")
     print("laporan.md                     |                 2 |               3 |")
     print("musik.mp3                      |                 3 |               5 |")    
     # SJF (Shortest Job First) → Urutkan berdasarkan durasi (indeks ke-2)
