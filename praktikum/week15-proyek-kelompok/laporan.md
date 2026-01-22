@@ -44,6 +44,7 @@ Setelah menyelesaikan proyek ini, mahasiswa mampu:
 ---
 
 Struktur folder:
+
 week15-proyek-kelompok
  ┣ code
  ┃ ┣ data
@@ -61,6 +62,7 @@ week15-proyek-kelompok
  ┃ ┗ pagereplacemen.png
  ┣ laporan.md
  ┗ presentasi.md
+
 ## 2. Arsitektur Aplikasi
 
 
