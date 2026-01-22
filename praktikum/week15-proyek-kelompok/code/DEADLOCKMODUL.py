@@ -1,8 +1,13 @@
 import csv
 from collections import defaultdict
+import os
 
 def maindead():
-    filename = "praktikum/week15-proyek-kelompok/code/dataset.csv"
+    import os
+
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    filename = os.path.join(BASE_DIR, "dataset.csv")
+
     processes, allocation, request = read_dataset(filename)
 
     print("=== DATASET ===")
@@ -76,4 +81,6 @@ def detect_deadlock(wfg, processes):
     return deadlocks
 
 
-maindead()
+if __name__ == "__main__":
+    maindead()
+

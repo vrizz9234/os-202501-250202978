@@ -1,6 +1,7 @@
 from CPU import menu_SJF
 from LRU import browser_scenario
 from DEADLOCKMODUL import maindead
+
 def main():
     while True:
         print("\n" + "╔══════════════════════════════╗")
