@@ -15,8 +15,10 @@ def main():
         elif pilihan == '3':
             print("keluar dari program ")
             break
+            
         else:
             print("error input silakan coba lagi")
+            
             main()
 
 
