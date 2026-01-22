@@ -63,8 +63,6 @@ week15-proyek-kelompok
  ┗ presentasi.md
 ## 2. Arsitektur Aplikasi
 
-Modul dan Pengaplikasiannya
-
 
 
 
@@ -101,10 +99,7 @@ dmesg | head
 
 Sertakan screenshot hasil percobaan atau diagram:
 
-![alt text](screenshots/dockerbuild.png)
-![alt text](screenshots/cpuscheduling.png)
-![alt text](screenshots/pagereplacemen.png)
-![alt text](screenshots/keluar.png)
+
 ---
 
 ## Analisis
