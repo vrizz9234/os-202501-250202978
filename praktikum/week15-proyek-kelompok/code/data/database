@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 project/
 │── main.py
 │── cpu/
@@ -8,3 +9,15 @@ project/
 │   └── deadlock_detection.py
 │── docs/
 │── README.md
+=======
+project/
+│── main.py
+│── cpu/
+│   └── scheduling.py
+│── memory/
+│   └── page_replacement.py
+│── deadlock/
+│   └── deadlock_detection.py
+│── docs/
+│── README.md
+>>>>>>> 4dcfe17b3db1b8ba2585e897e5d79ca73b23064b

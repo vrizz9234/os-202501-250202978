@@ -43,9 +43,27 @@ Setelah menyelesaikan proyek ini, mahasiswa mampu:
 5. Melakukan presentasi dan demo hasil proyek.
 ---
 
-## 2. Arsitektur Aplikasi
+Struktur folder:
 
-Modul dan Pengaplikasiannya
+week15-proyek-kelompok
+ ┣ code
+ ┃ ┣ data
+ ┃ ┃ ┗ database
+ ┃ ┣ CPU.py
+ ┃ ┣ dockerfile
+ ┃ ┣ example.txt
+ ┃ ┣ kelompok.py
+ ┃ ┗ LRU.py
+ ┣ screenshots
+ ┃ ┣ cpuscheduling.png
+ ┃ ┣ dockerbuild.png
+ ┃ ┣ example.png
+ ┃ ┣ keluar.png
+ ┃ ┗ pagereplacemen.png
+ ┣ laporan.md
+ ┗ presentasi.md
+
+## 2. Arsitektur Aplikasi
 
 
 
@@ -105,10 +123,7 @@ dmesg | head
 
 Sertakan screenshot hasil percobaan atau diagram:
 
-![alt text](screenshots/dockerbuild.png)
-![alt text](screenshots/cpuscheduling.png)
-![alt text](screenshots/pagereplacemen.png)
-![alt text](screenshots/keluar.png)
+
 ---
 
 ## Analisis
