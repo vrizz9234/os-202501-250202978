@@ -59,6 +59,28 @@ Modul dan Pengaplikasiannya
 ## Dasar Teori
 Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 
+
+
+## Struktur folder & file
+
+project/
+│── main.py
+│── cpu/
+│   └── scheduling.py
+│── memory/
+│   └── page_replacement.py
+│── deadlock/
+│   └── deadlock_detection.py
+│── docs/
+│── README.md
+
+
+
+
+
+
+
+
 ---
 
 ## Langkah Praktikum

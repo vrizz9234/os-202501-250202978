@@ -1,0 +1,10 @@
+project/
+│── main.py
+│── cpu/
+│   └── scheduling.py
+│── memory/
+│   └── page_replacement.py
+│── deadlock/
+│   └── deadlock_detection.py
+│── docs/
+│── README.md
