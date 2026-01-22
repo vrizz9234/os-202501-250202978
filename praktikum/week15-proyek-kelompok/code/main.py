@@ -1,4 +1,5 @@
 from CPU import menu_SJF
+from LRU import browser_scenario
 def main():
     while True:
         print("\n" + "╔══════════════════════════════╗")
@@ -12,13 +13,13 @@ def main():
         pilihan = input("Pilih menu (1/2/3): ")
         if pilihan =='1':
             menu_SJF()
+        elif pilihan =='2':
+            browser_scenario()
         elif pilihan == '3':
             print("keluar dari program ")
             break
-            
         else:
             print("error input silakan coba lagi")
-            
             main()
 
 
