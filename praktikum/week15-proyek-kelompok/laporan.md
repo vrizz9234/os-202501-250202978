@@ -238,7 +238,13 @@ Pengujian ini mensimulasikan manajemen RAM browser menggunakan dataset riwayat t
 ---
 
 ## 5. Pembagian Peran dan Kontribusi
-
+| Nama Anggota | Peran Utama | Deskripsi Kontribusi |
+| --- | --- | --- |
+| Faris Azhar |
+| Muhammad Reza Pahlevi | 
+| Ammarudin Ibnu Salam |
+| Tri Agustin Wahyuningtyas |
+| Keysya Ayu Anggita |
 
 ---
 ## 6. Quiz dan Penutup
