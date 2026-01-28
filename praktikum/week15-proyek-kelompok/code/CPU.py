@@ -42,3 +42,4 @@ def menu_SJF():
     print("-" * 40)
     print("Semua download selesai.")
     print("-" * 40)
+
