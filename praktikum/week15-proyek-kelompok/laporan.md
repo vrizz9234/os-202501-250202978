@@ -238,13 +238,16 @@ Pengujian ini mensimulasikan manajemen RAM browser menggunakan dataset riwayat t
 ---
 
 ## 5. Pembagian Peran dan Kontribusi
-| Nama Anggota | Peran Utama | Deskripsi Kontribusi |
-| --- | --- | --- |
-| Faris Azhar |
-| Muhammad Reza Pahlevi | 
-| Ammarudin Ibnu Salam |
-| Tri Agustin Wahyuningtyas |
-| Keysya Ayu Anggita |
+
+
+| NIM           | Nama                      | Role                               | Kontribusi                                                                                                                                                                                                                                                                                                                                                                           |
+| ------------- | ------------------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **250202978** | **Faris Azhar**           | **Project Lead / Integrator**      | Mengkoordinasikan seluruh anggota tim dalam pengerjaan Mini Simulasi Sistem Operasi, merancang arsitektur aplikasi, menentukan alur integrasi antara modul CPU Scheduling (SJF) dan Page Replacement (LRU), melakukan review serta merge commit pada repositori GitHub, dan memastikan aplikasi berhasil dijalankan menggunakan Docker Container untuk keperluan demo dan pengujian. |
+| 250202995     | Muhammad Reza Pahlevi     | Developer – Page Replacement (LRU) | Mengimplementasikan algoritma Page Replacement Least Recently Used (LRU), menyusun dan mengelola dataset referensi halaman, menghitung jumlah page hit dan page fault, serta melakukan pengujian untuk memastikan algoritma berjalan sesuai dengan konsep manajemen memori pada sistem operasi.                                                                                      |
+| 250202929     | Ammarudin Ibnu Salam      | Developer – CPU Scheduling (SJF)   | Mengimplementasikan algoritma CPU Scheduling Shortest Job First (SJF), menghitung nilai Waiting Time dan Turnaround Time untuk setiap proses, serta melakukan validasi hasil simulasi guna memastikan kesesuaian dengan teori penjadwalan proses pada sistem operasi.                                                                                                                |
+| 250202970     | Tri Agustin Wahyuningtyas | Quality Assurance (QA)             | Melakukan pengujian fungsional terhadap aplikasi Mini Simulasi Sistem Operasi, memverifikasi hasil simulasi CPU Scheduling (SJF) dan Page Replacement (LRU), mengidentifikasi serta melaporkan bug atau ketidaksesuaian hasil, dan memastikan aplikasi berjalan sesuai dengan spesifikasi yang telah ditentukan.                                                                     |
+| 250202944     | Keysya Ayu Anggita        | Laporan & Dokumentasi              | Menyusun laporan praktikum Mini Simulasi Sistem Operasi secara sistematis, mendokumentasikan alur kerja aplikasi dan hasil simulasi, menyiapkan tangkapan layar sebagai bukti eksekusi program, serta membantu penyusunan materi pendukung untuk kebutuhan presentasi dan pengumpulan tugas.                                                                                         |
+
 
 ---
 ## 6. Quiz dan Penutup
